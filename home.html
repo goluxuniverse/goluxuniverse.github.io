@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>Bootply.com - Greenfield Template</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+        <!-- CSS code from Bootply.com editor -->
+        
+        <style type="text/css">
+            /* -- custom css for Bootstrap 3.x --*/
+
+/* move special fonts to HTML head for better performance */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600');
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* fix bs3 horizontal scrollbar bug */
+.row { margin: 0; padding: 0 }
+
+h1 {
+  font-size:45px; 
+}
+
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.icon-bar {
+   background-color:#fff;
+}
+
+.scroll-down a, .scroll-top a {
+   color:#ffffff;
+}
+
+.scroll-down {
+   position:fixed;
+   bottom:20%;
+   right:0%;
+   color:#f9f9f9;
+}
+
+.scroll-top {
+  background-color:#33ee67;
+}
+
+.header .btn-lg {
+   font-size:28px;
+   border-color:#eeeeee;
+   padding:15px;
+   background-color:transparent;
+   color:#ffffff;
+}
+
+.header .btn-lg:hover {
+   background-color:#eeeeee;
+   color:#777777;
+}
+
+.navbar a {
+  color:#fff;
+}
+
+.navbar-bold.affix {
+  background-color:#545455;
+}
+
+.navbar-bold {
+  background-color:black;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.navbar-bold li a:hover, .navbar-bold li.active {
+  background-color:#22dd56;
+}
+
+.vert {
+  vertical-align: middle;
+  width:100%;
+  padding-top:4%;
+}
+
+.header h1 {
+  font-size:110px;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+  color:#431a6d;
+  color:#fff;
+  margin-left:-5px;
+  margin-bottom:5px;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.header .lead {
+  color:#eeeeee;
+  font-size:25px;
+}
+
+.header {
+  height: 80%;
+  background: black url('http://www.bootply.com/assets/example/pt_squares_lg.png') repeat center center fixed;
+}
+
+.blurb {
+  padding: 120px 0;
+  background-color:#fefefe;
+}
+
+.blurb .panel {
+  background-color:transparent;
+}
+
+.bright {
+  background: #7fbbda url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+  color:#fff;
+}
+
+.featurette {
+  background: #545455;
+  padding: 50px 0;
+  color: #ffffff;
+}
+
+.featurette-item {
+  margin-bottom: 15px;
+}
+
+.featurette-item > i {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 56px;
+  width: 140px;
+  height: 140px;
+  line-height: 136px;
+  vertical-align: middle; 
+  text-align: center;
+}
+
+.featurette-item > i:hover {
+  font-size: 68px;
+}
+
+.callout {
+  color: #ffffff;
+  padding-top:7%;
+  height: 100%;
+  width: 100%;
+  background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.gallery {
+  padding: 50px 0;
+}
+
+.call-to-action {
+  background: #eeeeee;
+  padding: 50px 0;
+}
+
+.call-to-action .btn {
+  margin: 10px;
+}
+
+footer {
+  padding: 100px 0;
+}
+
+/* -- end custom css for Bootstrap 3.x --*/
+          body {
+    color: #777;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+        #layout.active #menu {
+            left: 150px;
+            width: 150px;
+        }
+
+        #layout.active .menu-link {
+            left: 150px;
+        }
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+     margin: 0;
+     color: #333;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #ccc;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -150px; /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #999;
+        border: none;
+        padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+        background: #1f8dd6;
+    }
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+        margin: 0;
+    }
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+    .menu-link:hover,
+    .menu-link:focus {
+        background: #000;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        padding-left: 150px; /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 150px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 150px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+}
+
+          
+
+        </style>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  >
+        
+        
+<div class="navbar navbar-fixed-top navbar-bold" data-spy="affix" data-offset-top="1000">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Go..Lux</a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#sec1">Section 1</a></li>
+        <li><a href="#sec2">Section 2</a></li>
+        <li><a href="#sec3">Section 3</a></li>
+        <li><a href="#sec4">Section 4</a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+
+<div class="header vert">
+  <div class="container">
+    
+    <h1>Go..Lux</h1>
+      <img src="http://universetechsus.files.wordpress.com/2014/04/anonymous-black_00258471.jpg" alt="Smiley face" width="100%" height="160px"><p class="lead">Where ride is all about style & class.</p>
+      
+  </div>
+</div>
+
+<div id="sec1" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>The Simplicity of Bootstrap</h1>
+        <p class="lead">The Most Popular Responsive Framework</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="featurette" id="sec2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Amazing Features</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2 text-center">
+        <div class="featurette-item">
+          <i class="icon-rocket"></i>
+          <h4>Rocket</h4>
+          <p>Up-up-and-away with this starter template.</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="featurette-item">
+          <i class="icon-magnet"></i>
+          <h4>Magnet</h4>
+          <p>For you are a magnet and I am steel.</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="featurette-item">
+          <i class="icon-shield"></i>
+          <h4>Shield</h4>
+          <p>Protect yourself. Don't design like it's 1999.</p>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <div class="featurette-item">
+          <i class="icon-pencil"></i>
+          <h4>Scholar</h4>
+          <p>Because lead pencils are pretty smart looking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout" id="sec3">
+  <div class="vert">
+    <div class="col-md-12 text-center"><h2>Sometimes People Are Cool</h2></div>
+    <div class="col-md-12 text-center">&nbsp;</div>
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="row hidden-xs">
+       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/5c708a2c9d25d1f2e4195ece1f1c684d?s=80"></div>
+       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/3bb38f66f79ca138f318af89fe6b02ec?s=80"></div>
+       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/3423a3e32fda92a5aaed72c7cde3849c?s=80"></div>
+       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/325b6c3c0a75bfdb72822035bb556826?s=80"></div>
+       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/cdd69340b0cfac4c7acb892e3ea7556e?s=80"></div>  
+       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/889778901fb1522dac2846ffe62bd960?s=80"></div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="blurb" id="sec4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Is That An iPhone?</h1>
+        <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="gallery">
+  
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h5>This Template is Responsive</h5>
+        <h2>Features Galore</h2>
+        <br>
+      </div>
+  </div>
+  
+  <div class="container well well-lg">
+    
+    <div class="row">
+    		
+      	<div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-film"></i></span> Carousel</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-folder-close-alt"></i></span> Tabs</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-credit-card"></i></span> Modal</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-reorder"></i></span> Navigation</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-mobile-phone"></i></span> Mobile-first</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-align-justify"></i></span> Accordion</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-list-alt"></i></span> Panel</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-check"></i></span> Form</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-table"></i></span> Table</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-eye-open"></i></span> Icons</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-th"></i></span> Responsive Grid</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <span class="text-success"><i class="icon-font"></i></span> Typography</a>
+          </div>
+        </div>      
+    </div>
+  </div>
+</div>
+
+<div class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Kickstart Your Web Design</h1>
+        <p class="lead">With this Responsive Bootstrap Template</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="blurb bright">
+  
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h3>Smashing Heading</h3>
+        <br>
+      </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-2">
+         <div class="panel panel-default">
+         <div class="panel-heading text-center"><h2><i class="icon-chevron-left"></i> Left</h2></div>
+         <div class="panel-body text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+          Aliquam in felis sit amet augue.<hr>
+          <button class="btn btn-lg btn-primary btn-block">Login</button> 
+          </div>
+         </div>
+ 	</div>
+    <div class="col-sm-4">
+         <div class="panel panel-default">
+         <div class="panel-heading text-center"><h2>Right <i class="icon-chevron-right"></i></h2></div>
+         <div class="panel-body text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+          Aliquam in felis sit amet augue.<hr>
+          <button class="btn btn-lg btn-primary btn-block">Sign Up</button> 
+           
+          </div>
+         </div>
+ 	</div>
+  </div>
+</div>
+
+<div class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h2>Sharing the Bootstrap Love</h2>
+        <p class="lead"><a href="http://bootply.com/85657"><strong>Download this Template</strong></a><br><small><a href="http://bootply.com/templates" target="ext">More Bootstrap Templates</a></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        <hr>
+        <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>Company ©2013</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<ul class="nav pull-right scroll-down">
+  <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
+</ul>
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="icon-chevron-up icon-3x"></i></a></li>
+</ul>
+
+        
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+        <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+        
+        <!-- JavaScript jQuery code from Bootply.com editor -->
+        
+        <script type='text/javascript'>
+        
+        $(document).ready(function() {
+        
+            /* smooth scrolling for scroll to top */
+$('.scroll-top').click(function(){
+  $('body,html').animate({scrollTop:0},1000);
+})
+/* smooth scrolling for scroll down */
+$('.scroll-down').click(function(){
+  $('body,html').animate({scrollTop:$(window).scrollTop()+800},1000);
+})
+
+/* highlight the top nav as scrolling occurs */
+$('body').scrollspy({ target: '#navbar' })
+
+        
+        });
+        /* YAHOO Pure v0.4.2
+HTML5 & CSS3 layout  Example. 
+A layout example that shows off a blog page with a list of posts
+SOURCE: <a href="http://purecss.io/layouts/side-menu/" target="_blank"><i><b>HTML5 & CSS3 layout  Example</b></i></a>
+ by http://purecss.io/  
+ */
+
+(function (window, document) {
+
+    var layout   = document.getElementById('layout'),
+        menu     = document.getElementById('menu'),
+        menuLink = document.getElementById('menuLink');
+
+    function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+        for(; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+            classes.push(className);
+        }
+
+        element.className = classes.join(' ');
+    }
+
+    menuLink.onclick = function (e) {
+        var active = 'active';
+
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(menuLink, active);
+    };
+
+}(this, this.document));
+        </script>
+        
+    </body>
+</html>
