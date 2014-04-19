@@ -432,8 +432,12 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 }
 .dropdown-backdrop {
-    position: static;
-}
+ position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;}
           
 
         </style>
