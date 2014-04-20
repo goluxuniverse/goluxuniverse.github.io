@@ -378,6 +378,8 @@ body {
   <label><span>From:</span> <input type="text" name="from"></label>
   <label><span>To:</span> <input type="text" name="to"></label>
   <p></p>
+    <h5 style="text-align:right"></h5>
+
 </div>
 <div id="map"></map>
 
@@ -416,6 +418,8 @@ body {
         var miles = Math.round(totalKM * 0.621371192 * 10) / 10;
         var distanceText = miles+' miles';
         $('#controls p').text(distanceText);
+         var distanceText = 'Estimated Total $ '+miles*4+'';
+        $('#controls h5').text(distanceText);
 
         drivingLine = new google.maps.Polyline({
           path: response.routes[0].overview_path,
