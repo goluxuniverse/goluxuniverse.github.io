@@ -85,11 +85,11 @@ img.grayscale {
 }
 
 .navbar-bold.affix {
-  background-color:#545455;
+  background-color:#33ee67;
 }
 
 .navbar-bold {
-  background-color:black;
+  background-color:#11cc45;
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
@@ -104,7 +104,7 @@ img.grayscale {
 }
 
 .header h1 {
-  font-size:110px;
+  font-size:85px;
   -webkit-text-stroke: 1px rgba(0,0,0,0.1);
   color:#431a6d;
   color:#fff;
@@ -119,6 +119,7 @@ img.grayscale {
 }
 
 .header {
+  text-align:center;
   height: 100%;
   background: black url('http://www.bootply.com/assets/example/pt_squares_lg.png') repeat center center fixed;
 }
@@ -138,7 +139,7 @@ img.grayscale {
 }
 
 .featurette {
-  background: #545455;
+  background: black;
   padding: 50px 0;
   color: #ffffff;
 }
@@ -193,246 +194,314 @@ footer {
 }
 
 /* -- end custom css for Bootstrap 3.x --*/
-          body {
-    color: #777;
+          @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+#cssmenu {
+  background:black;
+  margin: 0;
+  width: auto;
+  padding: 0;  line-height: 1;
+  display: block;
+  position: relative;
+  font-family: 'PT Sans', sans-serif;
 }
-
-.pure-img-responsive {
-    max-width: 100%;
-    height: auto;
+#cssmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
-
-/*
-Add transition to containers so they can push in and out.
-*/
-#layout,
-#menu,
-.menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+#cssmenu ul:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
-
-/*
-This is the parent `<div>` that contains the menu and the content area.
-*/
-#layout {
-    position: relative;
-    padding-left: 0;
+#cssmenu ul li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
 }
-    #layout.active {
-        position: relative;
-        left: 150px;
-    }
-        #layout.active #menu {
-            left: 150px;
-            width: 150px;
-        }
-
-        #layout.active .menu-link {
-            left: 150px;
-        }
-/*
-The content `<div>` is where all your content goes.
-*/
-.content {
-    margin: 0 auto;
-    padding: 0 2em;
-    max-width: 800px;
-    margin-bottom: 50px;
-    line-height: 1.6em;
+#cssmenu ul li a {
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
 }
-
-.header {
-     margin: 0;
-     color: #333;
-     text-align: center;
-     padding: 2.5em 2em 0;
-     border-bottom: 1px solid #eee;
- }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 75px;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #ccc;
-        padding: 0;
-        margin-top: 0;
-    }
-
-.content-subhead {
-    margin: 50px 0 20px 0;
-    font-weight: 300;
-    color: #888;
+#cssmenu ul li ul {
+  position: absolute;
+  left: -9999px;
+  top: auto;
 }
-
-
-
-/*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
-appears on the left side of the page.
-*/
-
-#menu {
-    margin-left: -150px; /* "#menu" width */
-    width: 150px;
-    position: fixed;
-    top: 0;
+#cssmenu ul li ul li {
+  max-height: 0;
+  position: absolute;
+  -webkit-transition: max-height 0.4s ease-out;
+  -moz-transition: max-height 0.4s ease-out;
+  -ms-transition: max-height 0.4s ease-out;
+  -o-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
+  background: #ffffff;
+}
+#cssmenu ul li ul li.has-sub:after {
+  display: block;
+  position: absolute;
+  content: '';
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background: #000000;
+  z-index: 1;
+  top: 13px;
+  right: 15px;
+}
+#cssmenu ul li ul li.has-sub:before {
+  display: block;
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  border-left-color: #ffffff;
+  z-index: 2;
+  top: 15px;
+  right: 15px;
+}
+#cssmenu ul li ul li a {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  color: #000000;
+  letter-spacing: 0;
+  display: block;
+  width: 140px;
+  padding: 11px 10px 11px 20px;
+}
+#cssmenu ul li ul li:hover > a,
+#cssmenu ul li ul li.active > a {
+  color: black;
+}
+#cssmenu ul li ul li:hover:after,
+#cssmenu ul li ul li.active:after {
+  background: black;
+}
+#cssmenu ul li ul li:hover > ul {
+  left: 170px;
+  top: 0;
+}
+#cssmenu ul li ul li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu > ul > li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  z-index: 0;
+  background: #ffffff;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+}
+#cssmenu > ul > li.has-sub > a {
+  padding-right: 40px;
+}
+#cssmenu > ul > li.has-sub > a:after {
+  display: block;
+  content: '';
+  background: #ffffff;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 13px;
+  right: 14px;
+  top: 16px;
+}
+#cssmenu > ul > li.has-sub > a:before {
+  display: block;
+  content: '';
+  border: 4px solid transparent;
+  border-top-color: black;
+  z-index: 2;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 16px;
+  top: 21px;
+}
+#cssmenu > ul > li > a {
+  color: #ffffff;
+  padding: 15px 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  z-index: 2;
+  position: relative;
+}
+#cssmenu > ul > li:hover:after,
+#cssmenu > ul > li.active:after {
+  height: 100%;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li.active > a {
+  color: #000000;
+}
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li.active > a:after {
+  background: #000000;
+}
+#cssmenu > ul > li:hover > a:before,
+#cssmenu > ul > li.active > a:before {
+  border-top-color: #ffffff;
+}
+#cssmenu > ul > li:hover > ul {
+  left: 0;
+}
+#cssmenu > ul > li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#cssmenu #menu-button {
+  display: none;
+}
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #cssmenu > ul {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.35s ease-out;
+    -moz-transition: max-height 0.35s ease-out;
+    -ms-transition: max-height 0.35s ease-out;
+    -o-transition: max-height 0.35s ease-out;
+    transition: max-height 0.35s ease-out;
+  }
+  #cssmenu > ul.open {
+    max-height: 1000px;
+    border-top: 1px solid rgba(110, 110, 110, 0.25);
+  }
+  #cssmenu ul {
+    width: 100%;
+  }
+  #cssmenu ul > li {
+    float: none;
+  }
+  #cssmenu ul li a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  #cssmenu ul > li:after {
+    display: none;
+  }
+  #cssmenu ul li.has-sub > a:after,
+  #cssmenu ul li.has-sub > a:before,
+  #cssmenu ul li ul li.has-sub:after,
+  #cssmenu ul li ul li.has-sub:before {
+    display: none;
+  }
+  #cssmenu ul li ul,
+  #cssmenu ul li ul li ul,
+  #cssmenu ul li ul li:hover > ul {
     left: 0;
-    bottom: 0;
-    z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-    /*
-    All anchors inside the menu should be styled like this.
-    */
-    #menu a {
-        color: #999;
-        border: none;
-        padding: 0.6em 0 0.6em 0.6em;
-    }
-
-    /*
-    Remove all background/borders, since we are applying them to #menu.
-    */
-     #menu .pure-menu,
-     #menu .pure-menu ul {
-        border: none;
-        background: transparent;
-    }
-
-    /*
-    Add that light border to separate items into groups.
-    */
-    #menu .pure-menu ul,
-    #menu .pure-menu .menu-item-divided {
-        border-top: 1px solid #333;
-    }
-        /*
-        Change color of the anchor links on hover/focus.
-        */
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
-            background: #333;
-        }
-
-    /*
-    This styles the selected menu item `<li>`.
-    */
-    #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
-        background: #1f8dd6;
-    }
-        /*
-        This styles a link within a selected menu item `<li>`.
-        */
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
-
-    /*
-    This styles the menu heading.
-    */
-    #menu .pure-menu-heading {
-        font-size: 110%;
-        color: #fff;
-        margin: 0;
-    }
-
-/* -- Dynamic Button For Responsive Menu -------------------------------------*/
-
-/*
-The button to open/close the Menu is custom-made and not part of Pure. Here's
-how it works:
-*/
-
-/*
-`.menu-link` represents the responsive menu toggle that shows/hides on
-small screens.
-*/
-.menu-link {
-    position: fixed;
-    display: block; /* show this only on small screens */
-    top: 0;
-    left: 0; /* "#menu width" */
-    background: #000;
-    background: rgba(0,0,0,0.7);
-    font-size: 10px; /* change this value to increase/decrease button size */
-    z-index: 10;
-    width: 2em;
-    height: auto;
-    padding: 2.1em 1.6em;
+    position: relative;
+  }
+  #cssmenu ul li ul li,
+  #cssmenu ul li:hover > ul > li {
+    max-height: 999px;
+    position: relative;
+    background: none;
+  }
+  #cssmenu ul li ul li a {
+    padding: 8px 20px 8px 35px;
+    color: #ffffff;
+    width: auto;
+  }
+  #cssmenu ul li ul ul li a {
+    padding: 8px 20px 8px 50px;
+  }
+  #cssmenu ul li ul li:hover > a {
+    color: #000000;
+  }
+  #cssmenu #menu-button {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  #cssmenu #menu-button:after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    border-top: 1px solid #ffffff;
+    right: 20px;
+    top: 16px;
+  }
+  #cssmenu #menu-button:before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    border-top: 1px solid #ffffff;
+    right: 20px;
+    top: 26px;
+  }
+    
 }
 
-    .menu-link:hover,
-    .menu-link:focus {
-        background: #000;
-    }
+	}
+	.documentation {
+		width: 1100px;
+		margin: 0px auto;
+		padding: 100px 0px;
+	}
+	.documentation h3, p {
+		text-align: center;
+	}
+	.documentation h3 {
+		margin: 0px 0px 20px 0px;
+		font-weight: 300;
+		font-size: 2em;
+	}
+	a, a:visited {
+		color: #E54028;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #c22d18;
+		text-decoration: underline;  
+		cursor: pointer;
+	}
 
-    .menu-link span {
-        position: relative;
-        display: block;
-    }
+/*Flicerplate style*/
+.flickerplate{position:relative;width:100%;height:600px;background-color:#e6e6e6;overflow:hidden}.flickerplate ul.flicks{width:10000%;height:100%;padding:0px;margin:0px;list-style:none}.flickerplate ul.flicks li{float:left;width:1%;height:100%;background-position:center;background-size:cover;display:table}.flickerplate ul.flicks li .flick-inner{height:100%;padding:10px;color:#fff;display:table-cell;vertical-align:middle}.flickerplate ul.flicks li .flick-inner .flick-content{max-width:1100px;margin-left:auto;margin-right:auto}.flickerplate ul.flicks li .flick-title{padding:0px 0px;font-size:2.778em;line-height:1.995em;text-align:center}.flickerplate ul.flicks li .flick-sub-text{padding:5px;font-weight:300;line-height:2.5em;color:rgba(255,255,255,0.8);text-align:center}.flickerplate ul.flicks li .flick-title span.flick-block-text,.flickerplate ul.flicks li .flick-sub-text span.flick-block-text{padding:12px 18px;background-color:rgba(0,0,0,0.6)}.flickerplate .arrow-navigation{position:absolute;height:80%;width:10%;top:10%;z-index:100;overflow:hidden}.flickerplate .arrow-navigation .arrow{display:block;height:100%;width:90%;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;transition:all 0.2s ease-out}.flickerplate .arrow-navigation:hover,.flickerplate .arrow-navigation .arrow:hover{cursor:pointer}.flickerplate .arrow-navigation.left{left:0%}.flickerplate .arrow-navigation.left .arrow{opacity:0;margin:0px 0px 0px 50%;background-image:url("https://raw.github.com/mewowa/Flickerplate/master/img/arrow-left-light.png");background-repeat:no-repeat;background-position:left}.flickerplate .arrow-navigation.right{right:0%}.flickerplate .arrow-navigation.right .arrow{opacity:0;margin:0px 0px 0px -50%;background-image:url("https://raw.github.com/mewowa/Flickerplate/master/img/arrow-right-light.png");background-repeat:no-repeat;background-position:right}.flickerplate .arrow-navigation.left.hover .arrow{opacity:1;margin:0px 0px 0px 20%}.flickerplate .arrow-navigation.right.hover .arrow{opacity:1;margin:0px 0px 0px -20%}.flickerplate .dot-navigation{position:absolute;bottom:15px;width:100%;text-align:center;z-index:100}.flickerplate .dot-navigation ul{text-align:center;list-style:none;padding:0px 15px}.flickerplate .dot-navigation ul li{display:inline-block;float:none}.flickerplate .dot-navigation .dot{width:14px;height:14px;margin:0px 6px;background-color:rgba(255,255,255,0.3);border-radius:50%;-o-border-radius:50%;-ms-border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;-webkit-transition:background-color 0.2s ease-out;-moz-transition:background-color 0.2s ease-out;-o-transition:background-color 0.2s ease-out;-ms-transition:background-color 0.2s ease-out;transition:background-color 0.2s ease-out}.flickerplate .dot-navigation .dot:hover{cursor:pointer;background-color:rgba(255,255,255,0.6)}.flickerplate .dot-navigation .dot.active{background-color:#fff}.flickerplate .dot-navigation.left,.flickerplate .dot-navigation.left ul{text-align:left}.flickerplate .dot-navigation.right,.flickerplate .dot-navigation.right ul{text-align:right}.flickerplate.flicker-theme-dark .arrow-navigation.left .arrow{background-image:url("https://raw.github.com/mewowa/Flickerplate/master/img/arrow-left-dark.png")}.flickerplate.flicker-theme-dark .arrow-navigation.right .arrow{background-image:url("https://raw.github.com/mewowa/Flickerplate/master/img/arrow-right-dark.png")}.flickerplate.flicker-theme-dark .dot-navigation .dot{background-color:rgba(0,0,0,0.12)}.flickerplate.flicker-theme-dark .dot-navigation .dot:hover{background-color:rgba(0,0,0,0.6)}.flickerplate.flicker-theme-dark .dot-navigation .dot.active{background-color:#000}.flickerplate.flicker-theme-dark ul.flicks li .flick-inner{color:rgba(0,0,0,0.9)}.flickerplate.flicker-theme-dark ul.flicks li .flick-inner .flick-content .flick-sub-text{color:rgba(0,0,0,0.9)}.flickerplate.flicker-theme-dark ul.flicks li .flick-inner .flick-content .flick-title span.flick-block-text,.flickerplate.flicker-theme-dark ul.flicks li .flick-inner .flick-content .flick-sub-text span.flick-block-text{background-color:rgba(255,255,255,0.5)}.flickerplate ul.flicks li.flick-theme-dark .flick-inner{color:rgba(0,0,0,0.9)}.flickerplate ul.flicks li.flick-theme-dark .flick-inner .flick-content .flick-sub-text{color:rgba(0,0,0,0.9)}.flickerplate ul.flicks li.flick-theme-dark .flick-inner .flick-content .flick-title span.flick-block-text,.flickerplate ul.flicks li.flick-theme-dark .flick-inner .flick-content .flick-sub-text span.flick-block-text{background-color:rgba(255,255,255,0.5)}.flickerplate.animate-transform-slide ul.flicks{-webkit-perspective:1000;-webkit-backface-visibility:hidden;transform:translate3d(0%, 0px, 0px);-webkit-transform:translate3d(0%, 0px, 0px);-webkit-transition:-webkit-transform 0.6s;-o-transition:-o-transform 0.6s;-moz-transition:-moz-transform 0.6s;transition:transform 0.6s}.flickerplate.animate-transition-slide ul.flicks{position:relative;left:0%;-webkit-transition:left 0.4s ease-out;-moz-transition:left 0.4s ease-out;-o-transition:left 0.4s ease-out;-ms-transition:left 0.4s ease-out;transition:left 0.4s ease-out}.flickerplate.animate-jquery-slide ul.flicks{position:relative;left:0%}.flickerplate.animate-scroller-slide{padding-bottom:0px;overflow:auto}.flickerplate.animate-scroller-slide ul.flicks{position:auto}@media screen and (-webkit-min-device-pixel-ratio: 3) and (max-width: 1080px), screen and (max-width: 700px){.flickerplate ul.flicks li .flick-inner .flick-content .flick-title{font-size:1.667em}}
 
-    .menu-link span,
-    .menu-link span:before,
-    .menu-link span:after {
-        background-color: #fff;
-        width: 100%;
-        height: 0.2em;
-    }
-
-        .menu-link span:before,
-        .menu-link span:after {
-            position: absolute;
-            margin-top: -0.6em;
-            content: " ";
-        }
-
-        .menu-link span:after {
-            margin-top: 0.6em;
-        }
-
-
-/* -- Responsive Styles (Media Queries) ------------------------------------- */
-
-/*
-Hides the menu at `48em`, but modify this based on your app's needs.
-*/
-@media (min-width: 48em) {
-
-    .header,
-    .content {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-
-    #layout {
-        padding-left: 150px; /* left col width "#menu" */
-        left: 0;
-    }
-    #menu {
-        left: 150px;
-    }
-
-    .menu-link {
-        position: fixed;
-        left: 150px;
-        display: none;
-    }
-
-    #layout.active .menu-link {
-        left: 150px;
-    }
-}
-
-          
 
         </style>
     </head>
@@ -442,24 +511,31 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     <body  >
         
         
-<div class="navbar navbar-fixed-top navbar-bold" data-spy="affix" data-offset-top="1000">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">Go..Lux</a>
-      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-    </div>
-    <div class="navbar-collapse collapse" id="navbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#sec1">Section 1</a></li>
-        <li><a href="#sec2">Section 2</a></li>
-        <li><a href="#sec3">Section 3</a></li>
-        <li><a href="#sec4">Section 4</a></li>
+<div style="position:fixed;width:100%;"
+    id='cssmenu'>
+
+<ul>
+   <li class='active'><a href='index.html'><span>Home</span></a></li>
+   <li class='has-sub'><a href='#'><span>Products</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Item</span></a></li>
+               <li class='last'><a href='#'><span>Sub Item</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Item</span></a></li>
+               <li class='last'><a href='#'><span>Sub Item</span></a></li>
+            </ul>
+         </li>
       </ul>
-    </div>
+   </li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
    </div>
 </div>
 
@@ -468,16 +544,16 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     
     <h1>Go..Lux</h1>
       <img src="http://universetechsus.files.wordpress.com/2014/04/anonymous-black_00258471.jpg" alt="Smiley face" width="100%" height="300px"><p class="lead">Where ride is all about style & class.</p>
-      
+            <div>&nbsp;</div>
   </div>
 </div>
 
-<div id="sec1" class="blurb">
+<div style="height:100%"id="sec1" class="blurb">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>The Simplicity of Bootstrap</h1>
-        <p class="lead">The Most Popular Responsive Framework</p>
+        <h1>ABOUT US</h1>
+        <p class="lead">Go.Lux about...................................</p>
       </div>
     </div>
   </div>
@@ -487,244 +563,99 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>Amazing Features</h1>
+        <h1> OUR LUXURY RIDES
+</h1>
+           <div class="flicker-example" data-block-text="false">
+
+		<ul>
+
+			<li data-background="http://chevy.sunauto.net/wp-content/uploads/2013/07/slide_chevy_suburban_7.jpg">
+
+				
+			</li>
+
+			<li data-background="http://www.chevrolet.com/content/chevrolet/northamerica/usa/nscwebsite/en/index/suvs-and-crossovers/2014-suburban/photos-and-videos/exterior/jcr:content/mm_gal_c2/thumbnailArea/mm_gal_item_c2_0.img_resize.img_stage._3.jpg">
+
+			</li>
+
+			<li data-background="http://www.chevrolet.com/content/chevrolet/northamerica/usa/nscwebsite/en/index/suvs-and-crossovers/2014-suburban/photos-and-videos/exterior/jcr:content/mm_gal_c2/thumbnailArea/mm_gal_item_c2.img_resize.img_stage._3.jpg">
+
+        			<li data-background="http://www.chevrolet.com/content/chevrolet/northamerica/usa/nscwebsite/en/index/suvs-and-crossovers/2014-suburban/photos-and-videos/interior/jcr:content/mm_gal_c2/thumbnailArea/mm_gal_item_c2_17.img_resize.img_stage._1.jpg">
+                 			<li data-background="http://www.chevrolet.com/content/chevrolet/northamerica/usa/nscwebsite/en/index/suvs-and-crossovers/2014-suburban/photos-and-videos/interior/jcr:content/mm_gal_c2/thumbnailArea/mm_gal_item_c2_0.img_resize.img_stage._1.jpg">
+                           			<li data-background="http://www.chevrolet.com/content/chevrolet/northamerica/usa/nscwebsite/en/index/suvs-and-crossovers/2014-suburban/photos-and-videos/interior/jcr:content/mm_gal_c2/thumbnailArea/mm_gal_item_c2_4.img_resize.img_stage._1.jpg">
+			</li>
+
+		</ul>
+
+	</div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-2 text-center">
-        <div class="featurette-item">
-          <i class="icon-rocket"></i>
-          <h4>Rocket</h4>
-          <p>Up-up-and-away with this starter template.</p>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="featurette-item">
-          <i class="icon-magnet"></i>
-          <h4>Magnet</h4>
-          <p>For you are a magnet and I am steel.</p>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="featurette-item">
-          <i class="icon-shield"></i>
-          <h4>Shield</h4>
-          <p>Protect yourself. Don't design like it's 1999.</p>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="featurette-item">
-          <i class="icon-pencil"></i>
-          <h4>Scholar</h4>
-          <p>Because lead pencils are pretty smart looking.</p>
-        </div>
+    <div class="header vert">
+
+      <div class="container">
+
+     <div >&nbsp;</div>
+      <a href="http://www.golux.co/maps" class="btn btn-default btn-lg">FARE QUOTE</a>
+  </div>
+   
       </div>
     </div>
   </div>
 </div>
 
-<div class="callout" id="sec3">
-  <div class="vert">
-    <div class="col-md-12 text-center"><h2>Sometimes People Are Cool</h2></div>
-    <div class="col-md-12 text-center">&nbsp;</div>
-    <div class="col-md-8 col-md-offset-2 text-center">
-      <div class="row hidden-xs">
-       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/5c708a2c9d25d1f2e4195ece1f1c684d?s=80"></div>
-       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/3bb38f66f79ca138f318af89fe6b02ec?s=80"></div>
-       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/3423a3e32fda92a5aaed72c7cde3849c?s=80"></div>
-       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/325b6c3c0a75bfdb72822035bb556826?s=80"></div>
-       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/cdd69340b0cfac4c7acb892e3ea7556e?s=80"></div>  
-       <div class="col-sm-2"><img class="img-circle grayscale" src="http://www.gravatar.com/avatar/889778901fb1522dac2846ffe62bd960?s=80"></div>
-     </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="blurb" id="sec4">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>Is That An iPhone?</h1>
-        <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-      </div>
+        <h1>CONTACT US</h1>
+                <h1>CALL OR TEXT (818) 445-4801</h1>
+
+                <h1>EMAIL: INFO@GOLUX.CO</h1>
+
+     </div>
     </div>
   </div>
 </div>
-
 <hr>
 
-<div class="gallery">
-  
-  <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h5>This Template is Responsive</h5>
-        <h2>Features Galore</h2>
-        <br>
-      </div>
-  </div>
-  
-  <div class="container well well-lg">
+<div class="header vert">
+  <div class="container">
     
-    <div class="row">
-    		
-      	<div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-film"></i></span> Carousel</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-folder-close-alt"></i></span> Tabs</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-credit-card"></i></span> Modal</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-reorder"></i></span> Navigation</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-mobile-phone"></i></span> Mobile-first</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-align-justify"></i></span> Accordion</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-list-alt"></i></span> Panel</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-check"></i></span> Form</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-table"></i></span> Table</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-eye-open"></i></span> Icons</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-th"></i></span> Responsive Grid</a>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
-              <span class="text-success"><i class="icon-font"></i></span> Typography</a>
-          </div>
-        </div>      
-    </div>
-  </div>
-</div>
-
-<div class="blurb">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Kickstart Your Web Design</h1>
-        <p class="lead">With this Responsive Bootstrap Template</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="blurb bright">
-  
-  <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h3>Smashing Heading</h3>
-        <br>
-      </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-2">
-         <div class="panel panel-default">
-         <div class="panel-heading text-center"><h2><i class="icon-chevron-left"></i> Left</h2></div>
-         <div class="panel-body text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-          Aliquam in felis sit amet augue.<hr>
-          <button class="btn btn-lg btn-primary btn-block">Login</button> 
-          </div>
-         </div>
- 	</div>
-    <div class="col-sm-4">
-         <div class="panel panel-default">
-         <div class="panel-heading text-center"><h2>Right <i class="icon-chevron-right"></i></h2></div>
-         <div class="panel-body text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-          Aliquam in felis sit amet augue.<hr>
-          <button class="btn btn-lg btn-primary btn-block">Sign Up</button> 
-           
-          </div>
-         </div>
- 	</div>
-  </div>
-</div>
-
-<div class="blurb">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <h2>Sharing the Bootstrap Love</h2>
-        <p class="lead"><a href="http://bootply.com/85657"><strong>Download this Template</strong></a><br><small><a href="http://bootply.com/templates" target="ext">More Bootstrap Templates</a></small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<footer>
+   <footer>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <ul class="list-inline">
-          <li><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
+          <li><a class="icon-facebook icon-2x" href="http://www.facebook.com/goluxco" target="_blank"><i class=""></i></a></li>
+                              <li><a class="icon-twitter icon-2x" href="http://www.twitter.com/goluxco" target="_blank"><i class=""></i></a></li>
+           <li><a class="icon-google-plus icon-2x" href="http://www.plus.google.com/goluxco" target="_blank"><i class=""></i></a></li>
+          <li><a class="icon-linkedin icon-2x" href="http://www.linkedin.com/goluxco" target="_blank"><i class=""></i></a></li>
+
         </ul>
         <hr>
-        <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>Company ©2013</p>
+        <p>Web Design and Development by
+ <i class=""></i>  <a href="http://www.universetechs.com"> UniverseTechs</a>.<br>Go..Lux CO. ©2014</p>
       </div>
     </div>
   </div>
-</footer>
-
-<ul class="nav pull-right scroll-down">
+     
+         <ul class="nav pull-right scroll-down">
   <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
 </ul>
 <ul class="nav pull-right scroll-top">
   <li><a href="#" title="Scroll to top"><i class="icon-chevron-up icon-3x"></i></a></li>
 </ul>
+</footer>
+    
+    
+  </div>
+</div>
+
+
+
+
 
         
         <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -733,7 +664,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 
-
+  <script src='https://raw.github.com/mewowa/Flickerplate/master/js/jquery-finger-v0.1.0.js'></script>
 
 
         
@@ -757,48 +688,31 @@ $('body').scrollspy({ target: '#navbar' })
 
         
         });
-        /* YAHOO Pure v0.4.2
-HTML5 & CSS3 layout  Example. 
-A layout example that shows off a blog page with a list of posts
-SOURCE: <a href="http://purecss.io/layouts/side-menu/" target="_blank"><i><b>HTML5 & CSS3 layout  Example</b></i></a>
- by http://purecss.io/  
+          $('#cssmenu').prepend('<div id="menu-button">Menu</div>');
+	$('#cssmenu #menu-button').on('click', function(){
+		var menu = $(this).next('ul');
+		if (menu.hasClass('open')) {
+			menu.removeClass('open');
+		}
+		else {
+			menu.addClass('open');
+		}
+	});
+        
+          /*Flickerplate*/
+!function(a){var b=function(){var b=this,c=0,d=!1,e=0,f=0,g=!1;b.settings={block_text:!0,inner_width:!1,theme:"light",flick_animation:"transition-slide",auto_flick:!0,auto_flick_delay:10,dot_navigation:!0,dot_alignment:"center",arrows:!0},b.init=function(f,h){b.settings=a.extend(b.settings,h),d=f,d.addClass("flickerplate"),d.find("ul:first").addClass("flicks"),d.find("li:first").addClass("first-flick"),d.attr("data-flick-position",c);var i=d.data("flick-animation");i&&i.length>0?("transform-slide"==i?b.settings.flick_animation="transform-slide":"transition-slide"==i?b.settings.flick_animation="transition-slide":"jquery-slide"==i?b.settings.flick_animation="jquery-slide":"scroller-slide"==i&&(b.settings.flick_animation="scroller-slide"),d.addClass("animate-"+i)):d.addClass("animate-"+b.settings.flick_animation);var j=d.data("theme"),k=d.find(".first-flick").data("theme");j&&j.length>0?(b.settings.theme=j,d.addClass(k&&k.length>0?"flicker-theme-"+k:"flicker-theme-"+j)):d.addClass("flicker-theme-"+b.settings.theme);var l=d.data("block-text");if(void 0!=l&&0==l&&(b.settings.block_text=!1),d.find("li").each(function(){e++,a(this).wrapInner('<div class="flick-inner"><div class="flick-content"></div></div>'),$flick_block_text=a(this).data("block-text"),void 0!=$flick_block_text?1==$flick_block_text&&(a(this).find(".flick-title").wrapInner('<span class="flick-block-text"></span>'),a(this).find(".flick-sub-text").wrapInner('<span class="flick-block-text"></span>')):1==b.settings.block_text&&(a(this).find(".flick-title").wrapInner('<span class="flick-block-text"></span>'),a(this).find(".flick-sub-text").wrapInner('<span class="flick-block-text"></span>'));var c=a(this).data("background");c&&c.length>0&&a(this).css("background-image","url("+c+")"),$flick_theme=a(this).data("theme"),$flick_theme&&$flick_theme.length>0&&a(this).addClass("flick-theme-"+$flick_theme)}),"scroller-slide"!=b.settings.flick_animation){$data_arrow_navigation=d.data("arrows"),void 0!=$data_arrow_navigation?0!=$data_arrow_navigation&&b.create_arrow_navigation():1==b.settings.arrows&&b.create_arrow_navigation(),$data_dot_navigation=d.data("dot-navigation"),$data_dot_alignment=d.data("dot-alignment");var m=b.settings.dot_alignment;void 0!=$data_dot_alignment&&("left"==$data_dot_alignment?m="left":"right"==$data_dot_alignment&&(m="right")),void 0!=$data_dot_navigation?0!=$data_dot_navigation&&b.create_dot_navigation(m):1==b.settings.dot_navigation&&b.create_dot_navigation(m),$flick_delay=1e3*b.settings.auto_flick_delay,$data_auto_flick=d.data("auto-flick"),$data_auto_flick_delay=d.data("auto-flick-delay"),$data_auto_flick_delay&&($flick_delay=1e3*$data_auto_flick_delay),void 0!=$data_auto_flick&&(b.settings.auto_flick=0!=$data_auto_flick?!0:!1),b.auto_flick_start(),b.flick_flicker(),"jquery-slide"!=b.settings.flick_animation&&d.find("ul.flicks").bind("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function(){g=!1})}},b.flick_flicker=function(){Modernizr.touch&&d.on("drag",function(a){0==g&&"horizontal"==a.orientation&&(a.preventDefault(),1==a.direction?(c--,0>c?c=0:(g=!0,b.move_flicker(c))):(c++,c==e?c=e-1:(g=!0,b.move_flicker(c))))})},b.create_arrow_navigation=function(){$arrow_nav_html='<div class="arrow-navigation left"><div class="arrow"></div></div>',$arrow_nav_html+='<div class="arrow-navigation right"><div class="arrow"></div></div>',d.prepend($arrow_nav_html),a(".arrow-navigation").mouseover(function(){0==a(this).hasClass("hover")&&a(this).addClass("hover")}),a(".arrow-navigation").mouseout(function(){1==a(this).hasClass("hover")&&a(this).removeClass("hover")}),a(".arrow-navigation").on("click",function(){a(this).hasClass("right")?(c++,c==e&&(c=0)):(c--,0>c&&(c=e-1)),b.move_flicker(c)})},b.create_dot_navigation=function(c){for($dot_nav_html='<div class="dot-navigation '+c+'"><ul>';e>f;)f++,$dot_nav_html+=1==f?'<li><div class="dot active"></div></li>':'<li><div class="dot"></div></li>';$dot_nav_html+="</ul></div>",d.prepend($dot_nav_html),d.find(".dot-navigation li").on("click",function(){b.move_flicker(a(this).index())})},b.auto_flick_start=function(){1==b.settings.auto_flick&&(b.flicker_auto=setInterval(b.auto_flick,$flick_delay))},b.auto_flick=function(){c++,c==e&&(c=0),b.move_flicker(c)},b.auto_flick_stop=function(){b.flicker_auto=clearInterval(b.flicker_auto)},b.auto_flick_reset=function(){b.auto_flick_stop(),b.auto_flick_start()},b.move_flicker=function(a){c=a,"transform-slide"==b.settings.flick_animation?d.find("ul.flicks").attr({style:"-webkit-transform:translate3d(-"+c+"%, 0, 0);-o-transform:translate3d(-"+c+"%, 0, 0);-moz-transform:translate3d(-"+c+"%, 0, 0);transform:translate3d(-"+c+"%, 0, 0)"}):"transition-slide"==b.settings.flick_animation?d.find("ul.flicks").attr({style:"left:-"+c+"00%;"}):"jquery-slide"==b.settings.flick_animation&&d.find("ul.flicks").animate({left:"-"+c+"00%"},function(){g=!1}),$crt_flick=d.find("ul.flicks li:eq("+c+")"),d.removeClass("flicker-theme-light").removeClass("flicker-theme-dark"),d.addClass($crt_flick.hasClass("flick-theme-dark")?"flicker-theme-dark":$crt_flick.hasClass("flick-theme-light")?"flicker-theme-light":"flicker-theme-"+b.settings.theme),d.find(".dot-navigation .dot.active").removeClass("active"),d.find(".dot:eq("+c+")").addClass("active"),d.attr("data-flick-position",c),b.auto_flick_reset()}};a.fn.flicker=function(c){var d=this.length;return this.each(function(e){var f=a(this),g="flickerplate"+(d>1?"-"+ ++e:""),h=(new b).init(f,c);f.data(g,h).data("key",g)})}}(jQuery);
+
+
+
+/*Execute flickerplate*/
+	$(document).ready(function(){
+		
+		$('.flicker-example').flicker();
+	});
+/* Modernizr 2.7.1 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load
  */
-
-(function (window, document) {
-
-    var layout   = document.getElementById('layout'),
-        menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
-
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
-
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
-    }
-
-    menuLink.onclick = function (e) {
-        var active = 'active';
-
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };
-
-}(this, this.document));
+window.Modernizr=function(e,t,n){function L(e){f.cssText=e}function A(e,t){return L(p.join(e+";")+(t||""))}function O(e,t){return typeof e===t}function M(e,t){return!!~(""+e).indexOf(t)}function _(e,t){for(var r in e){var i=e[r];if(!M(i,"-")&&f[i]!==n)return t=="pfx"?i:!0}return!1}function D(e,t,r){for(var i in e){var s=t[e[i]];if(s!==n)return r===!1?e[i]:O(s,"function")?s.bind(r||t):s}return!1}function P(e,t,n){var r=e.charAt(0).toUpperCase()+e.slice(1),i=(e+" "+v.join(r+" ")+r).split(" ");return O(t,"string")||O(t,"undefined")?_(i,t):(i=(e+" "+m.join(r+" ")+r).split(" "),D(i,t,n))}function H(){i.input=function(n){for(var r=0,i=n.length;r<i;r++)w[n[r]]=n[r]in l;return w.list&&(w.list=!!t.createElement("datalist")&&!!e.HTMLDataListElement),w}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")),i.inputtypes=function(e){for(var r=0,i,s,u,a=e.length;r<a;r++)l.setAttribute("type",s=e[r]),i=l.type!=="text",i&&(l.value=c,l.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(s)&&l.style.WebkitAppearance!==n?(o.appendChild(l),u=t.defaultView,i=u.getComputedStyle&&u.getComputedStyle(l,null).WebkitAppearance!=="textfield"&&l.offsetHeight!==0,o.removeChild(l)):/^(search|tel)$/.test(s)||(/^(url|email)$/.test(s)?i=l.checkValidity&&l.checkValidity()===!1:i=l.value!=c)),b[e[r]]=!!i;return b}("search tel url email datetime date month week time datetime-local number range color".split(" "))}var r="2.7.1",i={},s=!0,o=t.documentElement,u="modernizr",a=t.createElement(u),f=a.style,l=t.createElement("input"),c=":)",h={}.toString,p=" -webkit- -moz- -o- -ms- ".split(" "),d="Webkit Moz O ms",v=d.split(" "),m=d.toLowerCase().split(" "),g={svg:"http://www.w3.org/2000/svg"},y={},b={},w={},E=[],S=E.slice,x,T=function(e,n,r,i){var s,a,f,l,c=t.createElement("div"),h=t.body,p=h||t.createElement("body");if(parseInt(r,10))while(r--)f=t.createElement("div"),f.id=i?i[r]:u+(r+1),c.appendChild(f);return s=["&#173;",'<style id="s',u,'">',e,"</style>"].join(""),c.id=u,(h?c:p).innerHTML+=s,p.appendChild(c),h||(p.style.background="",p.style.overflow="hidden",l=o.style.overflow,o.style.overflow="hidden",o.appendChild(p)),a=n(c,e),h?c.parentNode.removeChild(c):(p.parentNode.removeChild(p),o.style.overflow=l),!!a},N=function(){function r(r,i){i=i||t.createElement(e[r]||"div"),r="on"+r;var s=r in i;return s||(i.setAttribute||(i=t.createElement("div")),i.setAttribute&&i.removeAttribute&&(i.setAttribute(r,""),s=O(i[r],"function"),O(i[r],"undefined")||(i[r]=n),i.removeAttribute(r))),i=null,s}var e={select:"input",change:"input",submit:"form",reset:"form",error:"img",load:"img",abort:"img"};return r}(),C={}.hasOwnProperty,k;!O(C,"undefined")&&!O(C.call,"undefined")?k=function(e,t){return C.call(e,t)}:k=function(e,t){return t in e&&O(e.constructor.prototype[t],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(t){var n=this;if(typeof n!="function")throw new TypeError;var r=S.call(arguments,1),i=function(){if(this instanceof i){var e=function(){};e.prototype=n.prototype;var s=new e,o=n.apply(s,r.concat(S.call(arguments)));return Object(o)===o?o:s}return n.apply(t,r.concat(S.call(arguments)))};return i}),y.flexbox=function(){return P("flexWrap")},y.canvas=function(){var e=t.createElement("canvas");return!!e.getContext&&!!e.getContext("2d")},y.canvastext=function(){return!!i.canvas&&!!O(t.createElement("canvas").getContext("2d").fillText,"function")},y.webgl=function(){return!!e.WebGLRenderingContext},y.touch=function(){var n;return"ontouchstart"in e||e.DocumentTouch&&t instanceof DocumentTouch?n=!0:T(["@media (",p.join("touch-enabled),("),u,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(e){n=e.offsetTop===9}),n},y.geolocation=function(){return"geolocation"in navigator},y.postmessage=function(){return!!e.postMessage},y.websqldatabase=function(){return!!e.openDatabase},y.indexedDB=function(){return!!P("indexedDB",e)},y.hashchange=function(){return N("hashchange",e)&&(t.documentMode===n||t.documentMode>7)},y.history=function(){return!!e.history&&!!history.pushState},y.draganddrop=function(){var e=t.createElement("div");return"draggable"in e||"ondragstart"in e&&"ondrop"in e},y.websockets=function(){return"WebSocket"in e||"MozWebSocket"in e},y.rgba=function(){return L("background-color:rgba(150,255,150,.5)"),M(f.backgroundColor,"rgba")},y.hsla=function(){return L("background-color:hsla(120,40%,100%,.5)"),M(f.backgroundColor,"rgba")||M(f.backgroundColor,"hsla")},y.multiplebgs=function(){return L("background:url(https://),url(https://),red url(https://)"),/(url\s*\(.*?){3}/.test(f.background)},y.backgroundsize=function(){return P("backgroundSize")},y.borderimage=function(){return P("borderImage")},y.borderradius=function(){return P("borderRadius")},y.boxshadow=function(){return P("boxShadow")},y.textshadow=function(){return t.createElement("div").style.textShadow===""},y.opacity=function(){return A("opacity:.55"),/^0.55$/.test(f.opacity)},y.cssanimations=function(){return P("animationName")},y.csscolumns=function(){return P("columnCount")},y.cssgradients=function(){var e="background-image:",t="gradient(linear,left top,right bottom,from(#9f9),to(white));",n="linear-gradient(left top,#9f9, white);";return L((e+"-webkit- ".split(" ").join(t+e)+p.join(n+e)).slice(0,-e.length)),M(f.backgroundImage,"gradient")},y.cssreflections=function(){return P("boxReflect")},y.csstransforms=function(){return!!P("transform")},y.csstransforms3d=function(){var e=!!P("perspective");return e&&"webkitPerspective"in o.style&&T("@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}",function(t,n){e=t.offsetLeft===9&&t.offsetHeight===3}),e},y.csstransitions=function(){return P("transition")},y.fontface=function(){var e;return T('@font-face {font-family:"font";src:url("https://")}',function(n,r){var i=t.getElementById("smodernizr"),s=i.sheet||i.styleSheet,o=s?s.cssRules&&s.cssRules[0]?s.cssRules[0].cssText:s.cssText||"":"";e=/src/i.test(o)&&o.indexOf(r.split(" ")[0])===0}),e},y.generatedcontent=function(){var e;return T(["#",u,"{font:0/0 a}#",u,':after{content:"',c,'";visibility:hidden;font:3px/1 a}'].join(""),function(t){e=t.offsetHeight>=3}),e},y.video=function(){var e=t.createElement("video"),n=!1;try{if(n=!!e.canPlayType)n=new Boolean(n),n.ogg=e.canPlayType('video/ogg; codecs="theora"').replace(/^no$/,""),n.h264=e.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/,""),n.webm=e.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,"")}catch(r){}return n},y.audio=function(){var e=t.createElement("audio"),n=!1;try{if(n=!!e.canPlayType)n=new Boolean(n),n.ogg=e.canPlayType('audio/ogg; codecs="vorbis"').replace(/^no$/,""),n.mp3=e.canPlayType("audio/mpeg;").replace(/^no$/,""),n.wav=e.canPlayType('audio/wav; codecs="1"').replace(/^no$/,""),n.m4a=(e.canPlayType("audio/x-m4a;")||e.canPlayType("audio/aac;")).replace(/^no$/,"")}catch(r){}return n},y.localstorage=function(){try{return localStorage.setItem(u,u),localStorage.removeItem(u),!0}catch(e){return!1}},y.sessionstorage=function(){try{return sessionStorage.setItem(u,u),sessionStorage.removeItem(u),!0}catch(e){return!1}},y.webworkers=function(){return!!e.Worker},y.applicationcache=function(){return!!e.applicationCache},y.svg=function(){return!!t.createElementNS&&!!t.createElementNS(g.svg,"svg").createSVGRect},y.inlinesvg=function(){var e=t.createElement("div");return e.innerHTML="<svg/>",(e.firstChild&&e.firstChild.namespaceURI)==g.svg},y.smil=function(){return!!t.createElementNS&&/SVGAnimate/.test(h.call(t.createElementNS(g.svg,"animate")))},y.svgclippaths=function(){return!!t.createElementNS&&/SVGClipPath/.test(h.call(t.createElementNS(g.svg,"clipPath")))};for(var B in y)k(y,B)&&(x=B.toLowerCase(),i[x]=y[B](),E.push((i[x]?"":"no-")+x));return i.input||H(),i.addTest=function(e,t){if(typeof e=="object")for(var r in e)k(e,r)&&i.addTest(r,e[r]);else{e=e.toLowerCase();if(i[e]!==n)return i;t=typeof t=="function"?t():t,typeof s!="undefined"&&s&&(o.className+=" "+(t?"":"no-")+e),i[e]=t}return i},L(""),a=l=null,function(e,t){function c(e,t){var n=e.createElement("p"),r=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",r.insertBefore(n.lastChild,r.firstChild)}function h(){var e=y.elements;return typeof e=="string"?e.split(" "):e}function p(e){var t=f[e[u]];return t||(t={},a++,e[u]=a,f[a]=t),t}function d(e,n,r){n||(n=t);if(l)return n.createElement(e);r||(r=p(n));var o;return r.cache[e]?o=r.cache[e].cloneNode():s.test(e)?o=(r.cache[e]=r.createElem(e)).cloneNode():o=r.createElem(e),o.canHaveChildren&&!i.test(e)&&!o.tagUrn?r.frag.appendChild(o):o}function v(e,n){e||(e=t);if(l)return e.createDocumentFragment();n=n||p(e);var r=n.frag.cloneNode(),i=0,s=h(),o=s.length;for(;i<o;i++)r.createElement(s[i]);return r}function m(e,t){t.cache||(t.cache={},t.createElem=e.createElement,t.createFrag=e.createDocumentFragment,t.frag=t.createFrag()),e.createElement=function(n){return y.shivMethods?d(n,e,t):t.createElem(n)},e.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+h().join().replace(/[\w\-]+/g,function(e){return t.createElem(e),t.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,t.frag)}function g(e){e||(e=t);var n=p(e);return y.shivCSS&&!o&&!n.hasCSS&&(n.hasCSS=!!c(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),l||m(e,n),e}var n="3.7.0",r=e.html5||{},i=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,s=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,o,u="_html5shiv",a=0,f={},l;(function(){try{var e=t.createElement("a");e.innerHTML="<xyz></xyz>",o="hidden"in e,l=e.childNodes.length==1||function(){t.createElement("a");var e=t.createDocumentFragment();return typeof e.cloneNode=="undefined"||typeof e.createDocumentFragment=="undefined"||typeof e.createElement=="undefined"}()}catch(n){o=!0,l=!0}})();var y={elements:r.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video",version:n,shivCSS:r.shivCSS!==!1,supportsUnknownElements:l,shivMethods:r.shivMethods!==!1,type:"default",shivDocument:g,createElement:d,createDocumentFragment:v};e.html5=y,g(t)}(this,t),i._version=r,i._prefixes=p,i._domPrefixes=m,i._cssomPrefixes=v,i.hasEvent=N,i.testProp=function(e){return _([e])},i.testAllProps=P,i.testStyles=T,i.prefixed=function(e,t,n){return t?P(e,t,n):P(e,"pfx")},o.className=o.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(s?" js "+E.join(" "):""),i}(this,this.document),function(e,t,n){function r(e){return"[object Function]"==d.call(e)}function i(e){return"string"==typeof e}function s(){}function o(e){return!e||"loaded"==e||"complete"==e||"uninitialized"==e}function u(){var e=v.shift();m=1,e?e.t?h(function(){("c"==e.t?k.injectCss:k.injectJs)(e.s,0,e.a,e.x,e.e,1)},0):(e(),u()):m=0}function a(e,n,r,i,s,a,f){function l(t){if(!d&&o(c.readyState)&&(w.r=d=1,!m&&u(),c.onload=c.onreadystatechange=null,t)){"img"!=e&&h(function(){b.removeChild(c)},50);for(var r in T[n])T[n].hasOwnProperty(r)&&T[n][r].onload()}}var f=f||k.errorTimeout,c=t.createElement(e),d=0,g=0,w={t:r,s:n,e:s,a:a,x:f};1===T[n]&&(g=1,T[n]=[]),"object"==e?c.data=n:(c.src=n,c.type=e),c.width=c.height="0",c.onerror=c.onload=c.onreadystatechange=function(){l.call(this,g)},v.splice(i,0,w),"img"!=e&&(g||2===T[n]?(b.insertBefore(c,y?null:p),h(l,f)):T[n].push(c))}function f(e,t,n,r,s){return m=0,t=t||"j",i(e)?a("c"==t?E:w,e,t,this.i++,n,r,s):(v.splice(this.i++,0,e),1==v.length&&u()),this}function l(){var e=k;return e.loader={load:f,i:0},e}var c=t.documentElement,h=e.setTimeout,p=t.getElementsByTagName("script")[0],d={}.toString,v=[],m=0,g="MozAppearance"in c.style,y=g&&!!t.createRange().compareNode,b=y?c:p.parentNode,c=e.opera&&"[object Opera]"==d.call(e.opera),c=!!t.attachEvent&&!c,w=g?"object":c?"script":"img",E=c?"script":w,S=Array.isArray||function(e){return"[object Array]"==d.call(e)},x=[],T={},N={timeout:function(e,t){return t.length&&(e.timeout=t[0]),e}},C,k;k=function(e){function t(e){var e=e.split("!"),t=x.length,n=e.pop(),r=e.length,n={url:n,origUrl:n,prefixes:e},i,s,o;for(s=0;s<r;s++)o=e[s].split("="),(i=N[o.shift()])&&(n=i(n,o));for(s=0;s<t;s++)n=x[s](n);return n}function o(e,i,s,o,u){var a=t(e),f=a.autoCallback;a.url.split(".").pop().split("?").shift(),a.bypass||(i&&(i=r(i)?i:i[e]||i[o]||i[e.split("/").pop().split("?")[0]]),a.instead?a.instead(e,i,s,o,u):(T[a.url]?a.noexec=!0:T[a.url]=1,s.load(a.url,a.forceCSS||!a.forceJS&&"css"==a.url.split(".").pop().split("?").shift()?"c":n,a.noexec,a.attrs,a.timeout),(r(i)||r(f))&&s.load(function(){l(),i&&i(a.origUrl,u,o),f&&f(a.origUrl,u,o),T[a.url]=2})))}function u(e,t){function n(e,n){if(e){if(i(e))n||(f=function(){var e=[].slice.call(arguments);l.apply(this,e),c()}),o(e,f,t,0,u);else if(Object(e)===e)for(p in h=function(){var t=0,n;for(n in e)e.hasOwnProperty(n)&&t++;return t}(),e)e.hasOwnProperty(p)&&(!n&&!--h&&(r(f)?f=function(){var e=[].slice.call(arguments);l.apply(this,e),c()}:f[p]=function(e){return function(){var t=[].slice.call(arguments);e&&e.apply(this,t),c()}}(l[p])),o(e[p],f,t,p,u))}else!n&&c()}var u=!!e.test,a=e.load||e.both,f=e.callback||s,l=f,c=e.complete||s,h,p;n(u?e.yep:e.nope,!!a),a&&n(a)}var a,f,c=this.yepnope.loader;if(i(e))o(e,0,c,0);else if(S(e))for(a=0;a<e.length;a++)f=e[a],i(f)?o(f,0,c,0):S(f)?k(f):Object(f)===f&&u(f,c);else Object(e)===e&&u(e,c)},k.addPrefix=function(e,t){N[e]=t},k.addFilter=function(e){x.push(e)},k.errorTimeout=1e4,null==t.readyState&&t.addEventListener&&(t.readyState="loading",t.addEventListener("DOMContentLoaded",C=function(){t.removeEventListener("DOMContentLoaded",C,0),t.readyState="complete"},0)),e.yepnope=l(),e.yepnope.executeStack=u,e.yepnope.injectJs=function(e,n,r,i,a,f){var l=t.createElement("script"),c,d,i=i||k.errorTimeout;l.src=e;for(d in r)l.setAttribute(d,r[d]);n=f?u:n||s,l.onreadystatechange=l.onload=function(){!c&&o(l.readyState)&&(c=1,n(),l.onload=l.onreadystatechange=null)},h(function(){c||(c=1,n(1))},i),a?l.onload():p.parentNode.insertBefore(l,p)},e.yepnope.injectCss=function(e,n,r,i,o,a){var i=t.createElement("link"),f,n=a?u:n||s;i.href=e,i.rel="stylesheet",i.type="text/css";for(f in r)i.setAttribute(f,r[f]);o||(p.parentNode.insertBefore(i,p),h(n,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))};
         </script>
         
     </body>
